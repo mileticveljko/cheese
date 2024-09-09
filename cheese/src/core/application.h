@@ -1,20 +1,21 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include "arena.h"
+
 namespace ch
 {
     class Application 
     {
     public:
-        Application();
+        Application(const Arena&);
         virtual ~Application();
 
         void Run();
     private:
-        static Application* s_Application;
     };
 
-    Application* CreateApplication();
+    Application* CreateApplication(const Arena&);
 }
 
 #endif

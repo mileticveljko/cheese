@@ -3,7 +3,8 @@
 
 int main()
 {
-    auto app = ch::CreateApplication();
+    ch::Arena arena;
+    auto app = ch::CreateApplication(arena);
     app->Run();
     delete app;
 }

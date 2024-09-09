@@ -3,7 +3,8 @@
 class Sandbox : public ch::Application
 {
 public:
-    Sandbox()
+    Sandbox(const ch::Arena& arena)
+        : ch::Application(arena), m_Arena(arena)
     {
         ch::Log::LogTrace("Hello $ $ $", "World", 27, 8.0f);
         ch::Log::LogError("Hello $ $ $", "World", 27, 8.0f);
@@ -15,9 +16,11 @@ public:
     {
         
     }
+private:
+    const ch::Arena& m_Arena;
 };
 
-ch::Application* ch::CreateApplication()
+ch::Application* ch::CreateApplication(const ch::Arena& arena)
 {
-    return new Sandbox;
+    return new Sandbox(arena);
 }

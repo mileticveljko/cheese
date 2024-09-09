@@ -1,18 +1,10 @@
 #include "application.h"
 
-#include <stdio.h>
-
 namespace ch
 {
-    Application* Application::s_Application = nullptr;
-
-    Application::Application()
+    Application::Application(const Arena&)
     {
-        if(s_Application)
-        {
-            return;
-        }
-        s_Application = this;
+
     }
 
     Application::~Application()
@@ -22,6 +14,6 @@ namespace ch
 
     void Application::Run()
     {
-        printf("App is running\n");
+
     }
 }
